@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0-ios;net10.0-maccatalyst;net10.0-windows10.0.19041</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HelloMaui</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationTitle>HelloMaui</ApplicationTitle>
+    <ApplicationId>com.companyname.hellomaui</ApplicationId>
+    <ApplicationIdGuid>E4DD3E27-7E8C-4427-A5DB-FDA31D79672F</ApplicationIdGuid>
+    <ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <DefaultLanguage>es-ES</DefaultLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX')) or $([MSBuild]::IsOSPlatform('Linux'))">
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <MauiIcon Include="Resources\\AppIcon\\appicon.svg" />
+    <MauiSplashScreen Include="Resources\\Splash\\splash.svg" Color="#512BD4" BaseSize="256,256" />
+    <MauiImage Include="Resources\\Images\\**" LogicalName="%(Filename)%(Extension)" />
+    <MauiAsset Include="Resources\\Raw\\**" LogicalName="%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-windows10.0.19041'">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.0" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
