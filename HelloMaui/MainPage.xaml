@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloMaui.MainPage"
+             BackgroundColor="White">
+    <VerticalStackLayout Spacing="16"
+                         Padding="32"
+                         VerticalOptions="Center">
+        <Label Text="Hola mundo"
+               FontSize="36"
+               HorizontalOptions="Center"
+               TextColor="#1F1F1F" />
+    </VerticalStackLayout>
+</ContentPage>
